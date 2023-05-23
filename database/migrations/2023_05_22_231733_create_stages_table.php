@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('stages', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("address");
-            $table->string("email");
-            $table->string("phone");
-            $table->string("ICE");
-            $table->softDeletes();
+            $table->foreignId('supervisor_id')->constrained('supervisors');
+            $table->foreignId('student_id')->constrained('students');
+            $table->date('start');
+            $table->date('end');
+            $table->json('grades')->nullable();
+            $table->binary('project')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('stages');
     }
 };
