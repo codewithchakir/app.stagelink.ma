@@ -1,8 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfspaceController;
+use App\Http\Controllers\SoutnanceController;
+use App\Http\Controllers\AdminspaceController;
+use App\Http\Controllers\StageofferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +34,18 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource(name:'companies', controller:CompanyController::class);
+
+Route::resource(name:'soutnances', controller:SoutnanceController::class);
+
+Route::resource(name:'stageoffer', controller:StageofferController::class);
+
+Route::get('admin', [AdminspaceController::class, 'index'])->name('admin.dashboard');
+Route::get('users', [AdminspaceController::class, 'users'])->name('admin.users');
+Route::get('admin/new', [AdminspaceController::class, 'admin'])->name('admin.new');
+
+
+Route::get('prof', [ProfspaceController::class, 'index'])->name('prof.dashboard');
+Route::get('students', [ProfspaceController::class, 'students'])->name('prof.students');
+Route::get('prof/soutnances', [ProfspaceController::class, 'soutnances'])->name('prof.soutnances');
 
 require __DIR__.'/auth.php';

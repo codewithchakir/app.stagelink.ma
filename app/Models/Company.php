@@ -12,6 +12,14 @@ class Company extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        "name",
+        "address",
+        "email",
+        "phone",
+        "ICE",
+    ];
+
     public function supervisors(): HasMany
     {
         return $this->hasMany(Supervisor::class);

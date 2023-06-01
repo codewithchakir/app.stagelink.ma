@@ -12,7 +12,8 @@ class StageofferController extends Controller
      */
     public function index()
     {
-        //
+        $offers = Stageoffer::all();
+        return view(view:'stageoffer.index' ,data:compact(var_name:'offers'));
     }
 
     /**
@@ -20,7 +21,7 @@ class StageofferController extends Controller
      */
     public function create()
     {
-        //
+        return view(view: 'stageoffer.create');
     }
 
     /**

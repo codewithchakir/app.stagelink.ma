@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'companies')
+@section('title', 'users')
 
 @section('content')
 
@@ -10,15 +10,10 @@
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
-                    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">All registerd companies</h2>
+                    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">All registerd users</h2>
                 </div>
                 <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <button type="button" class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-                        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
-                        </svg>
-                        Add company
-                    </button>
+                    
                 </div>
             </div>
             <div class="overflow-x-auto">
@@ -27,28 +22,28 @@
 
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-4 py-3">Company name</th>
+                            <th scope="col" class="px-4 py-3">Full name</th>
                             <th scope="col" class="px-4 py-3">Email</th>
-                            <th scope="col" class="px-4 py-3">Phone</th>
-                            <th scope="col" class="px-4 py-3">Address</th>
+                            <th scope="col" class="px-4 py-3">Type</th>
+                            <th scope="col" class="px-4 py-3">joined at</th>
 
                             <th scope="col" class="px-4 py-3">
-                                <span class="sr-only">Actions</span>
+                                Actions
                             </th>
                         </tr>
                     </thead>
 
                     <tbody>
 
-                        @foreach ($companies as $company)
+                        @foreach ($users as $user)
                         <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$company->name}}</th>
-                            <td class="px-4 py-3">{{$company->email}}</td>
-                            <td class="px-4 py-3">{{$company->phone}}</td>
-                            <td class="px-4 py-3">{{$company->address}}</td>
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$user->name}}</th>
+                            <td class="px-4 py-3">{{$user->email}}</td>
+                            <td class="px-4 py-3">{{$user->type}}</td>
+                            <td class="px-4 py-3">{{$user->created_at}}</td>
                             <td class="px-4 py-3 flex items-center justify-end">
-                                <a href="{{route('companies.edit', $company->id)}}">edit</a>
-                                    <form action="{{route('companies.destroy', $company->id)}}" method="post">
+                                <a href="{{route('companies.edit', $user->id)}}">edit</a>
+                                    <form action="{{route('companies.destroy', $user->id)}}" method="post">
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit">delete</button>

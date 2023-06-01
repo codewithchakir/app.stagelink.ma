@@ -11,6 +11,11 @@ class Prof extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "user_id",
+        "group",
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

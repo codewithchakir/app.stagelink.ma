@@ -12,7 +12,8 @@ class SoutnanceController extends Controller
      */
     public function index()
     {
-        //
+        $soutnances = Soutnance::all();
+        return view(view:'soutnances.index' ,data:compact(var_name:'soutnances'));
     }
 
     /**
@@ -20,7 +21,8 @@ class SoutnanceController extends Controller
      */
     public function create()
     {
-        //
+        $soutnances = Soutnance::all();
+        return view(view:'soutnances.create' ,data:compact(var_name:'soutnances'));
     }
 
     /**
@@ -28,7 +30,12 @@ class SoutnanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $soutnance = new Soutnance();
+        $soutnance->prof_id = $request->prof_id;
+        $soutnance->student_id = $request->student_id;
+        $soutnance->date_soutnance = $request->date_soutnance;
+        $soutnance->save();
+        return response("company added successfully");
     }
 
     /**
