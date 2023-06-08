@@ -11,19 +11,19 @@
 
 <div class="user-count">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-primary-700 text-white p-4 rounded-lg">
+        <div class="bg-orange-700 text-white p-4 rounded-lg">
             <p>Students</p>
             <p class="text-lg">0</p>
         </div>
-        <div class="bg-primary-700 text-white p-4 rounded-lg">
+        <div class="bg-orange-700 text-white p-4 rounded-lg">
             <p>planned soutnances</p>
             <p class="text-lg">0</p>
         </div>
-        <div class="bg-primary-700 text-white p-4 rounded-lg">
+        <div class="bg-orange-700 text-white p-4 rounded-lg">
             <p>Future soutnances</p>
             <p class="text-lg">0</p>
         </div>
-        <div class="bg-primary-700 text-white p-4 rounded-lg">
+        <div class="bg-orange-700 text-white p-4 rounded-lg">
             <p>done soutnances</p>
             <p class="text-lg">0</p>
         </div>
