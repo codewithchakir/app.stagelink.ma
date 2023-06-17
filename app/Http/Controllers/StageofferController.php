@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stageoffer;
+use App\Models\Supervisor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StageofferController extends Controller
 {
@@ -21,7 +23,19 @@ class StageofferController extends Controller
      */
     public function create()
     {
-        return view(view: 'stageoffer.create');
+        $user = Auth::user();
+        $userId = $user->id;
+        
+        $supervisor = Supervisor::whereHas('user', function ($query) use ($userId) {
+            $query->where('id', $userId);
+        })->first();
+        
+        $supervisorId = $supervisor->id;
+        // dd($supervisorId);
+
+        
+
+        return view('stageoffer.create', compact('supervisorId'));
     }
 
     /**
