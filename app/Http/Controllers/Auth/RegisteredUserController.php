@@ -86,6 +86,13 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        if ($type === "student") {
+            return redirect(RouteServiceProvider::STUDENT);            
+        } elseif ($type === "prof") {
+            return redirect(RouteServiceProvider::PROF);
+        } elseif ($type === "supervisor") {
+            return redirect(RouteServiceProvider::SUPERVISOR);
+        }
+        return redirect(RouteServiceProvider::ADMIN);
     }
 }

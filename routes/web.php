@@ -39,13 +39,13 @@ Route::resource(name:'soutnances', controller:SoutnanceController::class);
 
 Route::resource(name:'stageoffer', controller:StageofferController::class);
 
-Route::get('admin', [AdminspaceController::class, 'index'])->name('admin.dashboard');
-Route::get('users', [AdminspaceController::class, 'users'])->name('admin.users');
-Route::get('admin/new', [AdminspaceController::class, 'admin'])->name('admin.new');
+Route::get('admin', [AdminspaceController::class, 'index'])->name('admin.dashboard')->middleware(['isAdmin']);
+Route::get('users', [AdminspaceController::class, 'users'])->name('admin.users')->middleware(['isAdmin']);
+Route::get('admin/new', [AdminspaceController::class, 'admin'])->name('admin.new')->middleware(['isAdmin']);
 
 
-Route::get('prof', [ProfspaceController::class, 'index'])->name('prof.dashboard');
-Route::get('students', [ProfspaceController::class, 'students'])->name('prof.students');
-Route::get('prof/soutnances', [ProfspaceController::class, 'soutnances'])->name('prof.soutnances');
+Route::get('prof', [ProfspaceController::class, 'index'])->name('prof.dashboard')->middleware(['isProf']);
+Route::get('students', [ProfspaceController::class, 'students'])->name('prof.students')->middleware(['isProf']);
+Route::get('prof/soutnances', [ProfspaceController::class, 'soutnances'])->name('prof.soutnances')->middleware(['isProf']);
 
 require __DIR__.'/auth.php';
