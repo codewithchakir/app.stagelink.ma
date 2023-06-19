@@ -20,4 +20,6 @@ class Stagereq extends Model
     {
         return $this->belongsTo(Stageoffer::class);
     }
+
+    protected $fillable = ['student_id', 'offer_id'];
 }

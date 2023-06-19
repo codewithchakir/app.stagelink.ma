@@ -144,10 +144,10 @@
                          </button>
                      </div>
                      <div class="mb-3 text-sm font-light text-orange-700 dark:text-orange-300">
-                         Preview the new Flowbite v2.0! You can turn the new features off for a limited time in your settings page.
+                      The web application isn't finished yet, this is only a preview for the 'soutnance' ! 
                      </div>
                      <a href="#" class="text-sm font-medium underline text-orange-700 dark:text-orange-300 hover:no-underline">
-                         Turn new features off
+                      thank you for understanding
                      </a>
                  </div>
              </div>

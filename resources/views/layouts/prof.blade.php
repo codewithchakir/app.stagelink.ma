@@ -120,20 +120,20 @@
                      </li>
                  </ul>
                  <div id="alert-update" class="p-4 mb-3 rounded-lg bg-orange-50 dark:bg-orange-900" role="alert">
-                     <div class="flex justify-between items-center mb-3">
-                         <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Beta</span>
-                         <button type="button" class="inline-flex p-1 w-6 h-6 rounded-lg text-orange-700 bg-orange-50 focus:ring-2 focus:ring-orange-400 hover:bg-orange-100 dark:bg-orange-900 dark:text-orange-300 dark:hover:bg-orange-800 dark:hover:text-orange-200" data-dismiss-target="#alert-update" aria-label="Close">
-                             <span class="sr-only">Dismiss</span>
-                             <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                         </button>
-                     </div>
-                     <div class="mb-3 text-sm font-light text-orange-700 dark:text-orange-300">
-                         Preview the new Flowbite v2.0! You can turn the new features off for a limited time in your settings page.
-                     </div>
-                     <a href="#" class="text-sm font-medium underline text-orange-700 dark:text-orange-300 hover:no-underline">
-                         Turn new features off
-                     </a>
-                 </div>
+                  <div class="flex justify-between items-center mb-3">
+                      <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Beta</span>
+                      <button type="button" class="inline-flex p-1 w-6 h-6 rounded-lg text-orange-700 bg-orange-50 focus:ring-2 focus:ring-orange-400 hover:bg-orange-100 dark:bg-orange-900 dark:text-orange-300 dark:hover:bg-orange-800 dark:hover:text-orange-200" data-dismiss-target="#alert-update" aria-label="Close">
+                          <span class="sr-only">Dismiss</span>
+                          <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      </button>
+                  </div>
+                  <div class="mb-3 text-sm font-light text-orange-700 dark:text-orange-300">
+                   The web application isn't finished yet, this is only a preview for the 'soutnance' ! 
+                  </div>
+                  <a href="#" class="text-sm font-medium underline text-orange-700 dark:text-orange-300 hover:no-underline">
+                   thank you for understanding
+                  </a>
+              </div>
              </div>
          </aside>
     

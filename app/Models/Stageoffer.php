@@ -21,4 +21,6 @@ class Stageoffer extends Model
     {
         return $this->hasMany(Stagereq::class);
     }
+
+    protected $fillable = ['supervisor_id', 'title', 'body'];
 }

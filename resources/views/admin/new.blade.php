@@ -6,14 +6,77 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div class="grid lg:h-screen lg:grid-cols-2">
-      <div class="flex justify-center items-center py-6 px-4 bg-orange-600 lg:py-0 sm:px-0">
+      <div class="flex py-6 px-4  lg:py-0 sm:px-0">
+
+
+
+
+
+
+
+
+        
+<section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+  <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+      <!-- Start coding here -->
+      <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+          <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+              <div class="w-full md:w-1/2">
+                  <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">All registerd admins</h2>
+              </div>
+              <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                  
+              </div>
+          </div>
+          <div class="overflow-x-auto">
+
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+
+                  <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                          <th scope="col" class="px-4 py-3">Full name</th>
+                          <th scope="col" class="px-4 py-3">Email</th>
+                          <th scope="col" class="px-4 py-3">joined at</th>
+                      </tr>
+                  </thead>
+
+                  <tbody>
+
+                      @foreach ($admins as $admin)
+                      <tr class="border-b dark:border-gray-700">
+                          <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$admin->name}}</th>
+                          <td class="px-4 py-3">{{$admin->email}}</td>
+                          <td class="px-4 py-3">{{$admin->created_at}}</td>
+                      </tr>
+                      @endforeach
+
+                  </tbody>
+              </table>
+
+
+          </div>
+
+
+          <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+              
+              
+          </nav>
+      </div>
+  </div>
+  </section>
+
+
+
+
+
+
       </div> 
 
 
-        <div class="flex justify-center items-center py-6 px-4 lg:py-0 sm:px-0">
+        <div class="flex justify-center items-center bg-orange-600 py-6 px-4 lg:py-0 sm:px-0">
 
 
-            <form class="space-y-4 max-w-md md:space-y-6 xl:max-w-xl" method="POST" action="{{ route('register') }}">
+            <form class="space-y-4 bg-gray-600 p-10 rounded max-w-md md:space-y-6 xl:max-w-xl" method="POST" action="{{ route('admin.store') }}">
                 @csrf
 
 

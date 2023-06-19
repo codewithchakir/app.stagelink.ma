@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stageoffer;
+use App\Models\Stagereq;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,7 @@ class StageofferController extends Controller
      */
     public function index()
     {
-        $offers = Stageoffer::all();
+        $offers = Stageoffer::with(['supervisor.user', 'supervisor.company', ])->get();
         return view(view:'stageoffer.index' ,data:compact(var_name:'offers'));
     }
 
@@ -33,9 +34,13 @@ class StageofferController extends Controller
         $supervisorId = $supervisor->id;
         // dd($supervisorId);
 
-        
+        $offer = Stageoffer::where('supervisor_id', $supervisorId)->get()->first();
+        if($offer)
+            $reqs = Stagereq::where('offer_id', $offer->id)->get();
+        else
+            $reqs = false;
 
-        return view('stageoffer.create', compact('supervisorId'));
+        return view('stageoffer.create', compact('supervisorId', 'offer', 'reqs'));
     }
 
     /**
@@ -43,7 +48,12 @@ class StageofferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Stageoffer::create([
+            'supervisor_id'=> request('supervisor_id'),
+            'title'=> request('title'),
+            'body'=> request('body')
+        ]);
+        return redirect(route('stageoffer.create'));
     }
 
     /**
@@ -73,8 +83,11 @@ class StageofferController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Stageoffer $stageoffer)
+    public function destroy($id)
     {
-        //
+        $offer = Stageoffer::where('id', $id)->get()->first();
+        $offer->delete();
+
+        return redirect(route('stageoffer.create'));
     }
 }

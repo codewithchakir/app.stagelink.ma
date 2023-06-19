@@ -23,7 +23,13 @@ class ProfspaceController extends Controller
         
         $group = $prof->group;
 
-        return view('prof.dashboard', compact('group'));
+        // Count of students with the same group
+        $studentCount = Student::where('group', $group)->count();
+
+        // Count of soutnances associated with the professor's ID
+        $soutnanceCount = Soutnance::where('prof_id', $prof->id)->count();
+
+    return view('prof.dashboard', compact('group', 'studentCount', 'soutnanceCount'));
 
     }
     
